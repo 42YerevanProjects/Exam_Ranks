@@ -1,7 +1,6 @@
-# :black_square_button: EXAM (project 2020)
-Exams of the new graph.  
-Subjects are in the folder of each exercises, along with a solution and a test file.  
-At the same time, I have presented the code as a sample for solving each of the functions.if you find any bug, write to "issues".  
+# :black_square_button: EXAM RANK 02 
+Exams of the second circle. I have presented the code as a sample for solving each of the functions. If you find any bug, write to "issues".
+
 ## :white_check_mark: Exam Rank 02  
 Original link to the subjects repository: [click](https://github.com/Glagan/42-exam-rank-02)  
   
