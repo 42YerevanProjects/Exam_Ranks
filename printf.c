@@ -1,7 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
 
 int	count;
 int	width;
@@ -181,9 +180,4 @@ int ft_printf(const char *str, ...)
 	}
 	va_end(ap);
 	return (count);
-}
-
-int main(void)
-{
-	printf("%d\n", ft_printf("%.5s", "Hello Bro"));
 }
