@@ -1,7 +1,8 @@
 # :black_square_button: EXAM RANK 02 
 Exams of the second circle. I have presented the code as a sample for solving each of the functions. If you find any bug, write to "issues".
 
-## :white_check_mark: Exam Rank 02  
+## :white_check_mark: Exam Rank 02 
+
     
   
 | Title | Description | Allowed functions | level of difficulty |
