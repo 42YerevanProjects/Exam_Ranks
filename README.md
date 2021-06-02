@@ -2,8 +2,7 @@
 Exams of the second circle. I have presented the code as a sample for solving each of the functions. If you find any bug, write to "issues".
 
 ## :white_check_mark: Exam Rank 02  
-Original link to the subjects repository: [click](https://github.com/Glagan/42-exam-rank-02)  
-  
+    
   
 | Title | Description | Allowed functions | level of difficulty |
 |:-----:|-------------|-------------------|:-------------------:|
