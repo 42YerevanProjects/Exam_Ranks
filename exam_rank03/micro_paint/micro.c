@@ -90,6 +90,6 @@ int	main(int argc, char** argv)
 		return (ft_error("Error: Operation file corrupted"));
 	if (!(matrix = init_matrix(&zone, fp)))
 		return (ft_error("Error: matrix cannot be initialized"));
-	print_matrix(matrix);
+	// TODO Initialize rectangles
 	return (0)
 }
