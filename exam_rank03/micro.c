@@ -19,6 +19,8 @@ typedef struct s_rectangle
 	char	color;
 }			t_rectangle;
 
+// Util functions
+//
 size_t	ft_strlen(char *str)
 {
 	int	i;
@@ -36,13 +38,25 @@ int	ft_error(char *msg)
 	return (1);
 }
 
+int	check_rec(t_rectangle rec)
+{
+	 float check = 1.00000000;
+	if ((rec.height > 0.00000000 && rec.width > 0.00000000) && (rec.type == 'r' || rec.type == 'R'))
+		return (-1);
+    if ((x < rec.x) || (rec.x + rec.width < x) || (y < rec.y) || (rec.y + rec.height < y))
+        return (-1);
+	return 0;
+}
+
+// Source functions
+
 char	**init_matrix(t_zone *zone, FILE *fp)
 {
 	char	**matrix;
 	int		i;
 	int		j;
 
-	if (fscanf(fp, "%d %d %c\n", &zone->width, &zone->height, &zone->background) == -1)
+	if (fscanf(fp, "%d %d %c\n", &zone->width, &zone->height, &zone->background) != 3)
 	{
 		fclose(fp);
 		return (NULL);
@@ -60,6 +74,21 @@ char	**init_matrix(t_zone *zone, FILE *fp)
 		i++;
 	}
 	return (matrix);
+}
+
+int	init_rectangles(FILE *fp, char **matrix)
+{
+	t_rectangle tmp;
+	int			count;
+	
+	count = fscanf(fp, "%c %f %f %f %f %c", &tmp.type, &tmp.x, &tmp.y, &tmp.width, &tmp.height, &tmp.color);
+	while (count == 6)
+	{
+		if (check_rec(tmp) == -1)
+			return (-1);
+		// get rectangles
+		count = fscanf(fp, "%c %f %f %f %f %c", &tmp.type, &tmp.x, &tmp.y, &tmp.width, &tmp.height, &tmp.color);
+	}
 }
 
 void	print_matrix(char **matrix)
@@ -91,5 +120,6 @@ int	main(int argc, char** argv)
 	if (!(matrix = init_matrix(&zone, fp)))
 		return (ft_error("Error: matrix cannot be initialized"));
 	// TODO Initialize rectangles
-	return (0)
+	print_matrix(matrix);
+	return (0);
 }
