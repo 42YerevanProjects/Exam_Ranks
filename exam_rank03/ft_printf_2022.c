@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
@@ -79,6 +78,11 @@ int ft_printf(const char *fmt, ...)
                 count += ft_putstr(va_arg(ap, char *));
             if (fmt[i] == 'x')
                 count += ft_putnbr(va_arg(ap, unsigned int), 16);
+			else
+			{
+				ft_putchar(fmt[i]);
+				count++;
+			}
         }        
         else
             count += ft_putchar(fmt[i]);
