@@ -39,7 +39,7 @@ void	ft_puterr(char *msg)
 	write(2, msg, ft_strlen(msg));
 }
 
-int	ft_exit(char *msg, int k)
+void	ft_exit(char *msg, int k)
 {
 	ft_puterr(msg);
 	if (k)
@@ -47,7 +47,7 @@ int	ft_exit(char *msg, int k)
 	exit(1);
 }
 
-int	ft_exec(t_cmd *cmd)
+void ft_exec(t_cmd *cmd)
 {
 	if (dup2(cmd->in, 0) == -1 || dup2(cmd->out, 1) == -1)
 		ft_exit("error: fatal\n", 1);
